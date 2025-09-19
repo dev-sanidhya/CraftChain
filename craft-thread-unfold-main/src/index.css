@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CraftChain X Design System - Indian Craft Heritage + Modern Tech
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 43 28% 95%; /* Sand Beige base */
+    --foreground: 242 26% 18%; /* Deep Indigo text */
+
+    /* Card & Surface Colors */
+    --card: 43 35% 97%;
+    --card-foreground: 242 26% 18%;
+
+    --popover: 43 35% 97%;
+    --popover-foreground: 242 26% 18%;
+
+    /* Brand Colors - Terracotta Primary */
+    --primary: 19 45% 40%; /* Earthy Terracotta */
+    --primary-foreground: 43 35% 97%;
+
+    /* Secondary - Deep Indigo */
+    --secondary: 242 26% 18%;
+    --secondary-foreground: 43 35% 97%;
+
+    /* Muted - Sage Green */
+    --muted: 120 12% 75%; /* Pastel Sage */
+    --muted-foreground: 242 20% 35%;
+
+    /* Accent - Gold */
+    --accent: 45 23% 58%; /* Accent Gold */
+    --accent-foreground: 242 26% 18%;
+
+    /* Heritage Gold for special elements */
+    --heritage-gold: 45 35% 65%;
+    --heritage-gold-foreground: 242 26% 18%;
+
+    /* Trust/Blockchain color - Tech Blue */
+    --trust: 217 71% 53%;
+    --trust-foreground: 43 35% 97%;
+
+    /* Success - Craft Green */
+    --success: 140 40% 45%;
+    --success-foreground: 43 35% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 43 35% 97%;
+
+    --border: 43 15% 88%;
+    --input: 43 15% 88%;
+    --ring: 19 45% 40%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 242 35% 8%; /* Dark Indigo */
+    --foreground: 43 35% 95%;
+
+    --card: 242 30% 12%;
+    --card-foreground: 43 35% 95%;
+
+    --popover: 242 30% 12%;
+    --popover-foreground: 43 35% 95%;
+
+    --primary: 19 55% 50%; /* Brighter Terracotta for dark */
+    --primary-foreground: 43 35% 95%;
+
+    --secondary: 242 20% 20%;
+    --secondary-foreground: 43 35% 95%;
+
+    --muted: 242 15% 25%;
+    --muted-foreground: 43 20% 70%;
+
+    --accent: 45 40% 65%; /* Brighter Gold for dark */
+    --accent-foreground: 242 26% 18%;
+
+    --heritage-gold: 45 50% 75%;
+    --heritage-gold-foreground: 242 26% 18%;
+
+    --trust: 217 71% 53%;
+    --trust-foreground: 43 35% 95%;
+
+    --success: 140 40% 55%;
+    --success-foreground: 43 35% 97%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 43 35% 95%;
+
+    --border: 242 15% 25%;
+    --input: 242 15% 25%;
+    --ring: 19 55% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Craft patterns and textures */
+  .craft-pattern {
+    background-image: 
+      radial-gradient(circle at 2px 2px, hsl(var(--accent)) 1px, transparent 0);
+    background-size: 20px 20px;
+    opacity: 0.05;
+  }
+
+  .fabric-texture {
+    background-image: 
+      linear-gradient(45deg, hsl(var(--muted)) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(var(--muted)) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(var(--muted)) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(var(--muted)) 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    opacity: 0.08;
+  }
+
+  /* Heritage gradients */
+  .gradient-heritage {
+    background: linear-gradient(135deg, 
+      hsl(var(--heritage-gold) / 0.9) 0%, 
+      hsl(var(--primary) / 0.8) 50%, 
+      hsl(var(--secondary) / 0.9) 100%);
+  }
+
+  .gradient-trust {
+    background: linear-gradient(135deg, 
+      hsl(var(--trust) / 0.1) 0%, 
+      hsl(var(--accent) / 0.1) 100%);
+  }
+
+  /* Craft animations */
+  @keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--heritage-gold) / 0.3),
+      transparent
+    );
+    background-size: 200px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glass morphism for blockchain elements */
+  .glass {
+    background: hsl(var(--background) / 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Smooth scrolling for SectionNav */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Adjust fixed nav responsiveness */
+  @media (max-width: 640px) {
+    nav.fixed {
+      left: 8px;
+      transform: none;
+      right: 8px;
+    }
+  }
+}

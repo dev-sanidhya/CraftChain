@@ -1,0 +1,60 @@
+# Frontend (Node.js)
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+node_modules
+dist
+dist-ssr
+*.local
+
+# Backend (Python)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+.env
+.venv/
+*.db
+*.sqlite3
+.pytest_cache/
+.coverage
+
+# Google Cloud
+*.json
+service-account-*.json
+gcp-credentials.json
+
+# ML Models
+models/
+*.pkl
+*.joblib
+*.h5
+*.model
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfplan
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary files
+tmp/
+temp/
+.tmp/

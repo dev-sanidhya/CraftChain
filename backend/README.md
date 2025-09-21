@@ -51,6 +51,7 @@ backend/
 - Notification Service: 8006
 - Media Service: 8007
 - Auth Service: 8008
+- Storytelling Service: 8009
 
 ## 🔧 Technology Stack
 
@@ -117,6 +118,12 @@ backend/
 # Start individual service
 cd services/product-service
 uvicorn main:app --reload --port 8001
+```
+
+To start the Storytelling Service locally:
+
+```bash
+uvicorn backend.services.storytelling_service.main:app --reload --port 8009
 ```
 
 ### Production Deployment

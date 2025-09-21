@@ -58,3 +58,5 @@ models/
 tmp/
 temp/
 .tmp/
+.venv_story/
+.venv/
